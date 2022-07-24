@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/onBoarding">
+
+    <fragment
+        android:id="@+id/onBoarding"
+        android:name="com.example.TuanQD_Navigation.OnBoarding"
+        android:label="fragment_on_boading"
+        tools:layout="@layout/fragment_on_boarding">
+        <action
+            android:id="@+id/action_onBoading_to_Intro"
+            app:destination="@id/Intro"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/Intro"
+        android:name="com.example.TuanQD_Navigation.Intro"
+        android:label="fragment_intro"
+        tools:layout="@layout/fragment_intro">
+
+        <action
+            android:id="@+id/action_Intro_to_Quizz"
+            app:destination="@id/Quizz"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/Quizz"
+        android:name="com.example.TuanQD_Navigation.Quizz"
+        android:label="fragment_quizz"
+        tools:layout="@layout/fragment_quizz">
+        <action
+            android:id="@+id/action_Quizz_to_onBoading"
+            app:destination="@id/onBoarding"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/fade_out"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"
+            app:popUpTo="@id/onBoarding"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_Quizz_to_Fail"
+            app:destination="@id/Fail"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+        <action
+            android:id="@+id/action_Quizz_to_Congrat"
+            app:destination="@id/Congrat"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/Congrat"
+        android:name="com.example.TuanQD_Navigation.Congrat"
+        android:label="fragment_congrat"
+        tools:layout="@layout/fragment_congrat">
+        <action
+            android:id="@+id/action_Congrat_to_Quizz"
+            app:destination="@id/Quizz"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+        <argument
+            android:name="myArg"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/Fail"
+        android:name="com.example.TuanQD_Navigation.Fail"
+        android:label="fragment_fail"
+        tools:layout="@layout/fragment_fail">
+        <action
+            android:id="@+id/action_Fail_to_Quizz"
+            app:destination="@id/Quizz"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
+
+</navigation>
